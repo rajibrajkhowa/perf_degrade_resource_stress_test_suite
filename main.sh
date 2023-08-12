@@ -1,18 +1,35 @@
 #! /bin/bash
 
+# This script acts as the interface for the performance degarde and stress testing suite
+
+# How to use the script?
+
+# ./main.sh <number of times we want the degrades to run>
+
+# E.g. ./main.sh 5
+
+# The function sys_perf_degrade() invokes the shell scripts that introduces random performance
+# degrade into CPU, RAM and IO
+
 sys_perf_degrade()
 
 {
-  ./chaos_scripts/sys_perf_degrade.sh
+  ./scripts/sys_perf_degrade.sh
 }
+
+# The function net_perf_degrade() invokes the shell scripts that introduces random performance
+# degrade like packet drops, delays and errors
 
 net_perf_degrade()
 
 {
-  ./chaos_scripts/net_perf_degrade.sh
+  ./scripts/net_perf_degrade.sh
 }
 
-i=5
+# The following code aims at randomizing the selection of the type of performance degrade
+# and how many times the degrades would be run
+
+i=$1
 
 while [ $i -ne 0 ]; do
 
