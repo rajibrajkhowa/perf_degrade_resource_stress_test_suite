@@ -27,7 +27,11 @@ net_perf_degrade()
 }
 
 # The following code aims at randomizing the selection of the type of performance degrade
-# and how many times the degrades would be run
+# and how many times the degrades would be run. Variable "i" takes a command line argument
+# to indicate the number of runs. The variable "list" indicates the number of degrades. 
+# Right now there are two degrades - system degrades and network degrades in our suite,
+# hence the values of the list is limited till 2. If further degrades are added, then we can
+# expand the list.
 
 i=$1
 
