@@ -21,7 +21,7 @@ IFACE=$(nmcli device status | awk '{print $1}' | grep  '[eth|ens|enp]' | head -1
 # This makes the script run in a non-interactive limited autonomus manner. An end user is
 # free to make changes to the random value ranges of WAIT_PERIOD, DELAY, LOSS and CORRUPT.
 # The "list" variable indicates the number of degrades. Right now there are three degrades
-# hence the values of the list is limited til 3. If further degrades are added, then we can
+# hence the values of the list is limited till 3. If further degrades are added, then we can
 # expand the list.
 
 list=(1 2 3)
