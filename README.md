@@ -1,11 +1,11 @@
 # perf_degrade_resource_stress_test_suite
 It is a collection of simple shell scripts to simulate performance degrade and resource overload scenarios in Linux/Unix based systems
 
-Where to find the codes?
+# Where to find the codes?
 
 https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git 
 
-Tools needed for lab setup:
+# Tools needed for lab setup:
 
 1.	VirtualBox or VMWare Player
 
@@ -25,21 +25,21 @@ Tools needed for lab setup:
 
 9.	Install “stress” by invoking “sudo apt -y install stress”. This tool is needed for system stress testing of CPU, RAM and IO. By default, “stress” is not installed with standard Linux distributions.
 
-How to run the lab?
+# How to run the lab?
 
 1.	Once the setup is done. Clone the repo in the VM by running “git clone https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git “
 
 2.	If Git is not installed, then install it by running “apt install git”.
 
 3.	Change the permissions of the three scripts by running:
+   
+        i.     chmod a+x main.sh
+  	    ii.    chmod a+x net_perf_degrade.sh, run this after performing “cd scripts/”.
+  	    iii.   chmod a+x sys_perf_degrade.sh, run this after performing “cd scripts/”.
 
-i.	chmod a+x main.sh
-ii.	chmod a+x net_perf_degrade.sh, run this after performing “cd scripts/”.
-iii.	chmod a+x sys_perf_degrade.sh, run this after performing “cd scripts/”.
+5.	Run the “main.sh” script ./main.sh <number of runs>. Please use run value of no more than 5 as RAM degrades make the VM non-responsive. E.g. ./main 3 will run the degrades 3 times.
 
-4.	Run the “main.sh” script ./main.sh <number of runs>. Please use run value of no more than 5 as RAM degrades make the VM non-responsive. E.g. ./main 3 will run the degrades 3 times.
-
-How to test the impact?
+# How to test the impact?
 
 1.	CPU & IO load can be checked using “top | head -10” and checking the CPU usage under “us” and “sys” for both CPUs. It would be great if you use “htop” utility instead of vanilla “top”. We can install “htop” by running “apt install htop”.
 
@@ -47,7 +47,7 @@ How to test the impact?
 
 3.	Network issues can be checked by a simple “ping -c 100 8.8.8.8” and see how the delay increases or the packet drops increases. 
 
-Possible bugs:
+# Possible bugs:
 
 1.	You might face hurdle when running the scripts due to illegal carriage return symbol as I used Windows machine to code the scripts and upload to GitHub.
 
