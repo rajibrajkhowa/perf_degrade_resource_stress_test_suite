@@ -1,0 +1,5 @@
+nginx
+redis
+rabbitmq-server
+tomcat
+httpd
