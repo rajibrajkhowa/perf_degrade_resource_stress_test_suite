@@ -52,6 +52,8 @@ while [ $i -ne 0 ]; do
   echo "Causing network degrade....."
   echo
   net_perf_degrade
+  sleep 5
+  tc qdisc delete dev ens33 root
   
  else
   echo "Something went wrong"
@@ -60,5 +62,3 @@ while [ $i -ne 0 ]; do
  
  i=$(( $i-1 ))
 done
- 
- 
