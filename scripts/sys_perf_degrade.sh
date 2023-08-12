@@ -34,7 +34,8 @@ WORKER_COUNT=$(shuf -i 100-500 -n 1)
 
 TIMEOUT=$(shuf -i 10-120 -n 1)
 
-# The 
+# The following code intorduces the various system performance degrades based on the 
+# options that are randomly generated
 
 if [ $x -eq 1 ]; then
   echo "Hogging the CPU(s)"
