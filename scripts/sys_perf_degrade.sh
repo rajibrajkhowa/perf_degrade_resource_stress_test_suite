@@ -56,4 +56,3 @@ else
   echo "Something went wrong"
   exit 1
 fi
-
