@@ -36,6 +36,7 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
         i.     chmod a+x main.sh
   	    ii.    chmod a+x net_perf_degrade.sh, run this after performing “cd scripts/”.
   	    iii.   chmod a+x sys_perf_degrade.sh, run this after performing “cd scripts/”.
+  	    iv.    chmod a+x service_outage.sh, run this after performing “cd scripts/”.
 
 5.	Run the “main.sh” script ./main.sh <number of runs>. Please use run value of no more than 5 as RAM degrades make the VM non-responsive. E.g. ./main 3 will run the degrades 3 times.
 
@@ -60,6 +61,7 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
         i.    dos2unix main.sh
         ii.   dos2unix net_perf_degrade.sh, run this after performing “cd scripts/”.
         iii.  dos2unix net_perf_degrade.sh, run this after performing “cd scripts/”.
+  	     iv.   dos2unix service_outage.sh, run this after performing “cd scripts/”.
 
 Or
 
@@ -75,3 +77,6 @@ Or
         viii.   mv  sys_perf_degrade.sh > temp.sh
         ix.     sed -e “s/\r//g” temp.sh > sys_perf_degrade.sh
         x.      rm temp.sh
+        xi.     mv  service_outage.sh > temp.sh
+        x.      sed -e “s/\r//g” temp.sh > service_outage.sh
+        xi.     rm temp.sh
