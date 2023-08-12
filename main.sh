@@ -26,18 +26,29 @@ net_perf_degrade()
   ./scripts/net_perf_degrade.sh
 }
 
+# The function service_outage() brings down a service randomly by referencing a target list
+# available in "target.txt" file. If the services configured in the system matches with an
+# entry in "target.txt" file, then that service is stopped or brought down. This script will
+# simulate a random service outage scenario.
+
+service_outage()
+
+{
+   ./scripts/service_outage.sh
+}
+
 # The following code aims at randomizing the selection of the type of performance degrade
 # and how many times the degrades would be run. Variable "i" takes a command line argument
 # to indicate the number of runs. The variable "list" indicates the number of degrades. 
 # Right now there are two degrades - system degrades and network degrades in our suite,
-# hence the values of the list is limited till 2. If further degrades are added, then we can
+# hence the values of the list is limited till 3. If further degrades are added, then we can
 # expand the list.
 
 i=$1
 
 while [ $i -ne 0 ]; do
 
- list=(1 2)
+ list=(1 2 3)
 
  x=$(echo ${list[$RANDOM % ${#list[@]} ]})
  
@@ -53,6 +64,11 @@ while [ $i -ne 0 ]; do
   echo
   net_perf_degrade
 
+ elif [ $x -eq 3 ]; then
+  echo
+  echo "Causing service outage....."
+  echo
+  service_outage
   
  else
   echo "Something went wrong"
