@@ -34,7 +34,7 @@ DELAY=$(shuf -i 60-300 -n 1)
 
 LOSS=$(shuf -i 5-10 -n 1)
 
-CORRUPT=(shuf -i 5-10 -n 1)
+CORRUPT=$(shuf -i 5-10 -n 1)
 
 # The following code intorduces the various network performance degrades based on the 
 # options that are randomly generated
