@@ -30,9 +30,9 @@ list=(1 2 3)
 
 x=$(echo ${list[$RANDOM % ${#list[@]} ]})
  
-WORKER_COUNT=$(shuf -i 100-500 -n 1)
+WORKER_COUNT=$(shuf -i 10-100 -n 1)
 
-TIMEOUT=$(shuf -i 10-120 -n 1)
+TIMEOUT=$(shuf -i 10-60 -n 1)
 
 # The following code intorduces the various system performance degrades based on the 
 # options that are randomly generated
