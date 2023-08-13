@@ -31,12 +31,14 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
 
 2.	If Git is not installed, then install it by running “apt install git”.
 
-3.	Change the permissions of the three scripts by running:
+3.	Change the permissions of the three scripts by changing directory to the folder and running:
    
         i.    chmod a+x main.sh
   	    ii.    chmod a+x net_perf_degrade.sh
   	    iii.   chmod a+x sys_perf_degrade.sh
   	    iv.    chmod a+x service_outage.sh
+  	    v.     chmod a+x service_status_check.sh to make changes to all files at once
+  	    vi.    Alternatively run chmod a+x *sh
 
 5.	Run the “main.sh” script ./main.sh <number of runs>. Please use run value of no more than 5 as RAM degrades make the VM non-responsive. E.g. ./main 3 will run the degrades 3 times.
 
@@ -46,7 +48,9 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
 
 2.	RAM overload can be felt by VM becoming non-responsive and getting back control of terminal only after the RAM degrade is over. Sometimes even the terminal of VM crashes and normalcy is returned only after RAM degrade is over.
 
-3.	Network issues can be checked by a simple “ping -c 100 8.8.8.8” and see how the delay increases or the packet drops increases. 
+3.	Network issues can be checked by a simple “ping -c 100 8.8.8.8” and see how the delay increases or the packet drops increases.
+   
+5.	The "service_status_check.sh" is a helper script that can be run after the performance/degrade/outage activity is completed. This script is to be run if during exceution of main.sh some service went down. This helper scrupt will help identify that affected service during troubleshooting/restotration phase. 
 
 # Possible bugs:
 
@@ -56,13 +60,15 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
 
 3.	We can circumvent the problem by two possible ways:
 
-    I. Installing a utility “dos2unix” by running “apt install dos2unix” and run the following:
+    I. Installing a utility “dos2unix” by running “apt install dos2unix” and changing directory to the folder and running:
 
         i.    dos2unix main.sh
         ii.   dos2unix net_perf_degrade.sh
         iii.  dos2unix net_perf_degrade.sh
   	     iv.   dos2unix service_outage.sh
-  	     v.    dos2unix target.txt
+  	     v.    dos2unix service_status_check.sh
+  	     vi.   Alternatively run dos2unix *sh to make changes to all files at once
+  	     vii.  dos2unix target.txt
   	
 Or
 
@@ -80,6 +86,9 @@ Or
         x.      mv  service_outage.sh > temp.sh
         xi.     sed -e “s/\r//g” temp.sh > service_outage.sh
         xii.    rm temp.sh
-        xiii.   mv  target.txt > temp.txt
-        xiv.    sed -e “s/\r//g” temp.txt > target.txt
-        xv.     rm target.txt
+        xiii.   mv  service_status_check.sh > temp.sh
+        xiv.    sed -e “s/\r//g” temp.sh > service_status_check.sh
+        xv.     rm temp.sh
+        xvi.    mv  target.txt > temp.txt
+        xvii.   sed -e “s/\r//g” temp.txt > target.txt
+        xviii.  rm temp.txt
