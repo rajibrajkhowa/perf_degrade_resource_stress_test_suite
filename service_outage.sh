@@ -56,7 +56,7 @@ z=$(grep $y service_list.txt)
 
 if [ -z "$z" ]; then
    
-   true
+   echo "Either service is inactive or not present in the system"
    
 else
    systemctl stop $z
