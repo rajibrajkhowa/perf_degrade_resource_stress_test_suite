@@ -28,9 +28,7 @@ list=(1 2 3)
 
 n=${#list[@]}
 
-i=$(shuf -i 1-$n -n 1)
-
-x=$(echo ${list[i]})
+x=$(shuf -i 1-$n -n 1)
  
 WAIT_PERIOD=$(shuf -i 60-120 -n 1)
 
