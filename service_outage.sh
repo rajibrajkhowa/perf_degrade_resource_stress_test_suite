@@ -27,24 +27,24 @@ TARGET_LIST=$()
 # Store the list of target services to be brought down in a text file
 # and read it line by line and store it in the list TARGET_LIST
 
-n=$(cat target.txt | wc -l)
-
+readonly n=$(cat target.txt | wc -l)
+i=$(cat target.txt | wc -l)
 
 data=${1:-target.txt}
 
 while read x ; do
 
-  if [ $n -ne 0 ]; then
+  if [ $i -ne 0 ]; then
      TARGET_LIST+=( $x )
-     n=$(( $n-1 ))
+     i=$(( $i-1 ))
   fi
 
 done<$data
 
 
 # Randomly pick a target from the TARGET_LIST
-
-y=$(echo ${TARGET_LIST[$RANDOM % ${#TARGET_LIST[@]} ]})
+j=$(shuf -i 1-$n -n 1)
+y=$(echo ${TARGET_LIST[$j]})
 
 
 # Search the target string in the service list containing running services
