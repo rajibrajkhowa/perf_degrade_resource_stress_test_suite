@@ -14,7 +14,7 @@
 
 systemctl --type=service | awk '{print $1}' > temp.txt
 
-grep -e "'service" temp.txt > service_list.txt
+grep -e ".service" temp.txt > service_list.txt
 
 rm temp.txt
 
