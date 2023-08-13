@@ -28,6 +28,7 @@ TARGET_LIST=$()
 # and read it line by line and store it in the list TARGET_LIST
 
 readonly n=$(cat target.txt | wc -l)
+
 i=$(cat target.txt | wc -l)
 
 data=${1:-target.txt}
