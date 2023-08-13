@@ -33,10 +33,10 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
 
 3.	Change the permissions of the three scripts by running:
    
-        i.     chmod a+x main.sh
-  	    ii.    chmod a+x net_perf_degrade.sh, run this after performing “cd scripts/”.
-  	    iii.   chmod a+x sys_perf_degrade.sh, run this after performing “cd scripts/”.
-  	    iv.    chmod a+x service_outage.sh, run this after performing “cd scripts/”.
+        i.    chmod a+x main.sh
+  	    ii.    chmod a+x net_perf_degrade.sh
+  	    iii.   chmod a+x sys_perf_degrade.sh
+  	    iv.    chmod a+x service_outage.sh
 
 5.	Run the “main.sh” script ./main.sh <number of runs>. Please use run value of no more than 5 as RAM degrades make the VM non-responsive. E.g. ./main 3 will run the degrades 3 times.
 
@@ -59,9 +59,9 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
     I. Installing a utility “dos2unix” by running “apt install dos2unix” and run the following:
 
         i.    dos2unix main.sh
-        ii.   dos2unix net_perf_degrade.sh, run this after performing “cd scripts/”.
-        iii.  dos2unix net_perf_degrade.sh, run this after performing “cd scripts/”.
-  	     iv.   dos2unix service_outage.sh, run this after performing “cd scripts/”.
+        ii.   dos2unix net_perf_degrade.sh
+        iii.  dos2unix net_perf_degrade.sh
+  	     iv.   dos2unix service_outage.sh
   	
 Or
 
@@ -70,13 +70,12 @@ Or
         i.      mv main.sh > temp.sh
         ii.     sed -e “s/\r//g” temp.sh > main.sh
         iii.    rm temp.sh
-        iv.     cd scripts/
-        v.      mv  net_perf_degrade.sh > temp.sh
-        vi.     sed -e “s/\r//g” temp.sh > net_perf_degrade.sh
-        vii.    rm temp.sh
-        viii.   mv  sys_perf_degrade.sh > temp.sh
-        ix.     sed -e “s/\r//g” temp.sh > sys_perf_degrade.sh
-        x.      rm temp.sh
-        xi.     mv  service_outage.sh > temp.sh
-        x.      sed -e “s/\r//g” temp.sh > service_outage.sh
-        xi.     rm temp.sh
+        iv.     mv  net_perf_degrade.sh > temp.sh
+        v.      sed -e “s/\r//g” temp.sh > net_perf_degrade.sh
+        vi.     rm temp.sh
+        vii.    mv  sys_perf_degrade.sh > temp.sh
+        viii.   sed -e “s/\r//g” temp.sh > sys_perf_degrade.sh
+        ix.     rm temp.sh
+        x.      mv  service_outage.sh > temp.sh
+        xi.     sed -e “s/\r//g” temp.sh > service_outage.sh
+        xii.    rm temp.sh
