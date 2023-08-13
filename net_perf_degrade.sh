@@ -26,7 +26,11 @@ IFACE=$(nmcli device status | awk '{print $1}' | grep  '[eth|ens|enp]' | head -1
 
 list=(1 2 3)
 
-x=$(echo ${list[$RANDOM % ${#list[@]} ]})
+n=${#list[@]}
+
+i=$(shuf -i 1-$n -n 1)
+
+x=$(echo ${list[i]})
  
 WAIT_PERIOD=$(shuf -i 60-120 -n 1)
 
