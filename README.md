@@ -62,6 +62,7 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
         ii.   dos2unix net_perf_degrade.sh
         iii.  dos2unix net_perf_degrade.sh
   	     iv.   dos2unix service_outage.sh
+  	     v.    dos2unix target.txt
   	
 Or
 
@@ -79,3 +80,6 @@ Or
         x.      mv  service_outage.sh > temp.sh
         xi.     sed -e “s/\r//g” temp.sh > service_outage.sh
         xii.    rm temp.sh
+        xiii.   mv  target.txt > temp.txt
+        xiv.    sed -e “s/\r//g” temp.txt > target.txt
+        xv.     rm target.txt
