@@ -14,7 +14,7 @@
 sys_perf_degrade()
 
 {
-  ./scripts/sys_perf_degrade.sh
+  ./sys_perf_degrade.sh
 }
 
 # The function net_perf_degrade() invokes the shell scripts that introduces random performance
@@ -23,7 +23,7 @@ sys_perf_degrade()
 net_perf_degrade()
 
 {
-  ./scripts/net_perf_degrade.sh
+  ./net_perf_degrade.sh
 }
 
 # The function service_outage() brings down a service randomly by referencing a target list
@@ -34,7 +34,7 @@ net_perf_degrade()
 service_outage()
 
 {
-   ./scripts/service_outage.sh
+   ./service_outage.sh
 }
 
 # The following code aims at randomizing the selection of the type of performance degrade
