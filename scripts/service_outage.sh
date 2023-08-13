@@ -34,7 +34,7 @@ data=${1:-target.txt}
 
 while read x ; do
 
-  if [ $N -ne 0 ]; then
+  if [ $n -ne 0 ]; then
      TARGET_LIST+=( $x )
      n=$(( $n-1 ))
   fi
