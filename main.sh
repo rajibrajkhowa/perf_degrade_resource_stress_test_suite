@@ -46,34 +46,41 @@ service_outage()
 
 i=$1
 
-while [ $i -ne 0 ]; do
-
- list=(1 2 3)
-
- x=$(echo ${list[$RANDOM % ${#list[@]} ]})
- 
- if [ $x -eq 1 ]; then
-  echo
-  echo "Causing system degrade....."
-  echo
-  sys_perf_degrade
+if [ -z $1 ]; then
   
- elif [ $x -eq 2 ]; then
-  echo
-  echo "Causing network degrade....."
-  echo
-  net_perf_degrade
-
- elif [ $x -eq 3 ]; then
-  echo
-  echo "Causing service outage....."
-  echo
-  service_outage
-  
- else
-  echo "Something went wrong"
+  echo "The number of runs are not mentioned"
   exit 1
- fi
+
+else
+   while [ $i -ne 0 ]; do
+
+   list=(1 2 3)
+
+   x=$(echo ${list[$RANDOM % ${#list[@]} ]})
  
- i=$(( $i-1 ))
-done
+  if [ $x -eq 1 ]; then
+   echo
+   echo "Causing system degrade....."
+   echo
+   sys_perf_degrade
+  
+  elif [ $x -eq 2 ]; then
+   echo
+   echo "Causing network degrade....."
+   echo
+   net_perf_degrade
+
+  elif [ $x -eq 3 ]; then
+   echo
+   echo "Causing service outage....."
+   echo
+   service_outage
+  
+  else
+   echo "Something went wrong"
+   exit 2
+  fi
+ 
+  i=$(( $i-1 ))
+ done
+fi
