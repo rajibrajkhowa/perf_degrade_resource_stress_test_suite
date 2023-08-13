@@ -1,5 +1,5 @@
 nginx
 redis
-rabbitmq-server
+rabbitmq
 tomcat
 httpd
