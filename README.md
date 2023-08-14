@@ -62,9 +62,9 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
 
     I. Installing a utility “dos2unix” by running “apt install dos2unix” and changing directory to the folder and running:
 
-        i.    dos2unix main.sh
-        ii.   dos2unix net_perf_degrade.sh
-        iii.  dos2unix net_perf_degrade.sh
+         i.    dos2unix main.sh
+         ii.   dos2unix net_perf_degrade.sh
+         iii.  dos2unix net_perf_degrade.sh
   	     iv.   dos2unix service_outage.sh
   	     v.    dos2unix service_status_check.sh
   	     vi.   Alternatively run dos2unix *sh to make changes to all files at once
