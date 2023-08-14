@@ -33,7 +33,7 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
 
 3.	Change the permissions of the three scripts by changing directory to the folder and running:
    
-        i.    chmod a+x main.sh
+        i.     chmod a+x main.sh
   	    ii.    chmod a+x net_perf_degrade.sh
   	    iii.   chmod a+x sys_perf_degrade.sh
   	    iv.    chmod a+x service_outage.sh
