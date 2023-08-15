@@ -49,7 +49,7 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
 
 3.	Network issues can be checked by a simple “ping -c 100 8.8.8.8” and see how the delay increases or the packet drops increases.
    
-5.	The "service_status_check.sh" is a helper script that can be run after the performance/degrade/outage activity is completed. This script is to be run if during exceution of main.sh some service went down. This helper scrupt will help identify that affected service during troubleshooting/restotration phase. 
+5.	The "service_status_check.sh" is a helper script that can be run after the performance/degrade/outage activity is completed. This script is to be run if during exceution of main.sh some service went down. This helper script will help identify that affected service during troubleshooting/restotration phase. 
 
 # Possible bugs:
 
