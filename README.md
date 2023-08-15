@@ -38,7 +38,6 @@ https://github.com/rajibrajkhowa/perf_degrade_resource_stress_test_suite.git
   	    iii.   chmod a+x sys_perf_degrade.sh
   	    iv.    chmod a+x service_outage.sh
   	    v.     chmod a+x *.sh to make changes to all files at once
-  	    vi.    Alternatively run chmod a+x *sh
 
 5.	Run the “main.sh” script ./main.sh <number of runs>. Please use run value of no more than 5 as RAM degrades make the VM non-responsive. E.g. ./main 3 will run the degrades 3 times.
 
