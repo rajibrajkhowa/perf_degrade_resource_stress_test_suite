@@ -28,8 +28,6 @@ CPU_COUNT=$(lscpu | grep ^"CPU(s)" | awk '{print $2}')
 
 list=(1 2 3)
 
-n=${#list[@]}
-
 x=$(shuf -i 1-$n -n 1)
  
 WORKER_COUNT=$(shuf -i 10-100 -n 1)
