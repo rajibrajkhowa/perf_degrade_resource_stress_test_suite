@@ -73,21 +73,21 @@ Or
 
     II. Using a “sed” one-liner as follows. But for that to retain the original names, we have to first rename the file to “temp.sh” and run the sed one-liner to write the contents to the new file having the original file name.
 
-        i.      mv main.sh > temp.sh
+        i.      mv main.sh temp.sh
         ii.     sed -e “s/\r//g” temp.sh > main.sh
         iii.    rm temp.sh
-        iv.     mv  net_perf_degrade.sh > temp.sh
+        iv.     mv  net_perf_degrade.sh temp.sh
         v.      sed -e “s/\r//g” temp.sh > net_perf_degrade.sh
         vi.     rm temp.sh
-        vii.    mv  sys_perf_degrade.sh > temp.sh
+        vii.    mv  sys_perf_degrade.sh temp.sh
         viii.   sed -e “s/\r//g” temp.sh > sys_perf_degrade.sh
         ix.     rm temp.sh
-        x.      mv  service_outage.sh > temp.sh
+        x.      mv  service_outage.sh temp.sh
         xi.     sed -e “s/\r//g” temp.sh > service_outage.sh
         xii.    rm temp.sh
-        xiii.   mv  service_status_check.sh > temp.sh
+        xiii.   mv  service_status_check.sh temp.sh
         xiv.    sed -e “s/\r//g” temp.sh > service_status_check.sh
         xv.     rm temp.sh
-        xvi.    mv  target.txt > temp.txt
+        xvi.    mv  target.txt temp.txt
         xvii.   sed -e “s/\r//g” temp.txt > target.txt
         xviii.  rm temp.txt
